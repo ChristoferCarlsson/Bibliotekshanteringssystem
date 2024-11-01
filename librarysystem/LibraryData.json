@@ -1,0 +1,52 @@
+{
+  "books": [
+    {
+      "ID": 0,
+      "Title": "Test Bok 1",
+      "Author": "Johan Bengtsson",
+      "Genres": [ "Children", "Comedy" ],
+      "Publish": 2004,
+      "ISBN": 123458,
+      "Borrowed": false,
+      "Reviews": [
+        4,
+        5,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "ID": 1,
+      "Title": "Test Bok 2",
+      "Author": "Johan Bengtsson",
+      "Genres": [ "Children", "Comedy" ],
+      "Publish": 2004,
+      "ISBN": 123457,
+      "Borrowed": false,
+      "Reviews": [
+        4,
+        5,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "ID": 2,
+      "Title": "Test Bok 3",
+      "Author": "Johan Bengtsson",
+      "Genres": [ "Children", "Comedy" ],
+      "Publish": 2004,
+      "ISBN": 123456,
+      "Borrowed": false,
+      "Reviews": [
+        4,
+        5,
+        3,
+        3,
+        4
+      ]
+    }
+  ]
+}
