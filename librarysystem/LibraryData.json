@@ -4,49 +4,75 @@
       "ID": 0,
       "Title": "Test Bok 1",
       "Author": "Johan Bengtsson",
-      "Genres": [ "Children", "Comedy" ],
-      "Publish": 2004,
+      "Genres": [ "Horror", "Drama" ],
+      "Publish": 2002,
       "ISBN": 123458,
       "Borrowed": false,
       "Reviews": [
-        4,
-        5,
-        3,
-        3,
-        4
+        "4",
+        "4",
+        "3",
+        "3",
+        "5"
       ]
     },
     {
       "ID": 1,
-      "Title": "Test Bok 2",
-      "Author": "Johan Bengtsson",
+      "Title": "Banan Resan",
+      "Author": "Anders Bergqvist",
       "Genres": [ "Children", "Comedy" ],
       "Publish": 2004,
       "ISBN": 123457,
       "Borrowed": false,
       "Reviews": [
-        4,
-        5,
-        3,
-        3,
-        4
+        "2",
+        "4",
+        "4",
+        "3",
+        "4"
       ]
     },
     {
       "ID": 2,
-      "Title": "Test Bok 3",
+      "Title": "Test Bok 2",
       "Author": "Johan Bengtsson",
-      "Genres": [ "Children", "Comedy" ],
-      "Publish": 2004,
+      "Genres": [ "Horror", "Comedy" ],
+      "Publish": 2006,
       "ISBN": 123456,
       "Borrowed": false,
       "Reviews": [
-        4,
-        5,
-        3,
-        3,
-        4
+        "5",
+        "5",
+        "3",
+        "3",
+        "4"
       ]
+    },
+    {
+      "ID": 3,
+      "Title": "Test Bok Love",
+      "Author": "Johan Bengtsson",
+      "Genres": [ "Romance" ],
+      "Publish": 2004,
+      "ISBN": 1238,
+      "Borrowed": false,
+      "Reviews": [
+        "5",
+        "5",
+        "5",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "Name": "Johan Bengtsson",
+      "Description": "An older author who has been active in the field for a long time. Despite his age, he somehow manages to create masterpiece after masterpiece, who knows if he will slow down soon."
+    },
+    {
+      "Name": "Anders Bergqvist",
+      "Description": "Not much is known of this author, except that his book just popped up in libraries one day. His first book 'Banan Resan' was loved by kids, but disliked by adults."
     }
   ]
 }

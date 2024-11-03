@@ -10,7 +10,10 @@ namespace librarysystem
     public class MyDatabase
     {
         [JsonPropertyName("books")]
+        public List<Book> allBooksFromDB { get; set; }
 
-        public List<Book> AllaProdukterFrånDB { get; set; }
+
+        [JsonPropertyName("authors")]
+        public List<Author> allAuthorsFromDB { get; set; }
     }
 }
