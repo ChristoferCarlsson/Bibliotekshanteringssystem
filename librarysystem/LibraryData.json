@@ -2,18 +2,18 @@
   "books": [
     {
       "ID": 0,
-      "Title": "Test Bok 1",
+      "Title": "Sten Bok",
       "Author": "Johan Bengtsson",
       "Genres": [ "Horror", "Drama" ],
       "Publish": 2002,
       "ISBN": 123458,
       "Borrowed": false,
       "Reviews": [
-        "4",
-        "4",
-        "3",
-        "3",
-        "5"
+        4,
+        4,
+        3,
+        3,
+        5
       ]
     },
     {
@@ -25,43 +25,43 @@
       "ISBN": 123457,
       "Borrowed": false,
       "Reviews": [
-        "2",
-        "4",
-        "4",
-        "3",
-        "4"
+        2,
+        4,
+        4,
+        3,
+        4
       ]
     },
     {
       "ID": 2,
-      "Title": "Test Bok 2",
+      "Title": "Sten Bok 2",
       "Author": "Johan Bengtsson",
       "Genres": [ "Horror", "Comedy" ],
       "Publish": 2006,
       "ISBN": 123456,
       "Borrowed": false,
       "Reviews": [
-        "5",
-        "5",
-        "3",
-        "3",
-        "4"
+        5,
+        5,
+        3,
+        3,
+        4
       ]
     },
     {
       "ID": 3,
-      "Title": "Test Bok Love",
+      "Title": "Sten Bok Love",
       "Author": "Johan Bengtsson",
       "Genres": [ "Romance" ],
       "Publish": 2004,
       "ISBN": 1238,
       "Borrowed": false,
       "Reviews": [
-        "5",
-        "5",
-        "5",
-        "4",
-        "5"
+        5,
+        5,
+        5,
+        4,
+        5
       ]
     }
   ],

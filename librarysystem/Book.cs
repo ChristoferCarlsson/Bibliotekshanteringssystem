@@ -16,10 +16,10 @@ namespace librarysystem
         public int Publish { get; set; }
         public int ISBN { get; set; }
         public bool Borrowed { get; set; }
-        public List<string> Reviews { get; set; }
+        public List<int> Reviews { get; set; }
 
 
-        public Book(int id, string title, string author, List<string> genres, int publish, int isbn, bool borrowed, List<string> reviews)
+        public Book(int id, string title, string author, List<string> genres, int publish, int isbn, bool borrowed, List<int> reviews)
         {
             ID = id;
             Title = title;
