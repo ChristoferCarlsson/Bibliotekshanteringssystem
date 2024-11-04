@@ -234,9 +234,9 @@ namespace librarysystem
             //På grund av tidsbrist och att jag vill att koden inte skall vara för bloated, så kan man bara redigera 3 saker
             name = CleanUp(name);
             List<Book> allBooks = myDatabase.allBooksFromDB;
-            var titleBook = allBooks.Where(n => n.Title == name).ToList();
+            var titleBook = allBooks.Where(n => n.Title == name).First();
 
-            if (titleBook.Count == 0)
+            if (titleBook == null)
             {
                 Console.WriteLine("Den här boken finns inte i biblioteket");
                 return;
@@ -284,10 +284,9 @@ namespace librarysystem
                 title = CleanUp(title);
                 author = CleanUp(author);
 
-                //Det kan bara finnas en av samma bok, därför använder vi index [0]
-                titleBook[0].Title = title;
-                titleBook[0].Author = author;
-                titleBook[0].Publish = publish;
+                titleBook.Title = title;
+                titleBook.Author = author;
+                titleBook.Publish = publish;
 
 
                 string updatedJSON = JsonSerializer.Serialize(myDatabase, new JsonSerializerOptions { WriteIndented = true });
@@ -346,16 +345,16 @@ namespace librarysystem
         {
             title = CleanUp(title);
             List<Book> allBooks = myDatabase.allBooksFromDB;
-            var titleBook = allBooks.Where(n => n.Title == title).ToList();
+            var titleBook = allBooks.Where(n => n.Title == title).First();
 
-            if (titleBook.Count == 0)
+            if (titleBook == null)
             {
                 Console.WriteLine("Den här boken finns inte i biblioteket");
                 return;
             }
             else
             {
-                titleBook[0].Reviews.Add(review);
+                titleBook.Reviews.Add(review);
 
                 string updatedJSON = JsonSerializer.Serialize(myDatabase, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(dataJSONfilPath, updatedJSON);
