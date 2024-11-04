@@ -7,7 +7,7 @@ namespace librarysystem
         //Vi sätter upp våran JSON fil
         string dataJSONfilPath = "LibraryData.json";
         JsonFetch JsonFetch = new JsonFetch();
-        MyDatabase myDatabase = JsonFetch.fetch();
+        MyDatabase myDatabase = JsonFetch.Fetch();
 
         public void CreateBook(string title, string author, List<string> genres, int publish, int isbn)
         {
@@ -134,15 +134,7 @@ namespace librarysystem
 
                     titleBook.ForEach(book =>
                     {
-                        Console.WriteLine($"{book.Title} skriven av {book.Author}");
-                        Console.WriteLine($"Skriven år {book.Publish}");
-                        book.Genres.ForEach(genre => Console.WriteLine(genre));
-                        Console.WriteLine($"ISBN {book.ISBN}");
-
-                        if (book.Reviews.Count > 0)
-                        {
-                            Console.WriteLine($"Betyg: {book.Reviews.Average()}");
-                        }
+                        PrintBookInfo(book);
                         Console.WriteLine();
                     });
                 }
@@ -167,15 +159,7 @@ namespace librarysystem
 
                 genreBooks.ForEach(book =>
                 {
-                    Console.WriteLine($"{book.Title} skriven av {book.Author}");
-                    Console.WriteLine($"Skriven år {book.Publish}");
-                    book.Genres.ForEach(genre => Console.WriteLine(genre));
-                    Console.WriteLine($"ISBN {book.ISBN}");
-
-                    if (book.Reviews.Count > 0)
-                    {
-                        Console.WriteLine($"Betyg: {book.Reviews.Average()}");
-                    }
+                    PrintBookInfo(book);
                     Console.WriteLine();
                 });
             }
@@ -190,39 +174,34 @@ namespace librarysystem
             Console.WriteLine("_______________");
             Console.WriteLine("");
 
+            var sortAfter = allBooks.OrderBy(book => book.Author).ToList();
             if (sort == "publish")
             {
-                var sortAfter = allBooks.OrderBy(book => book.Publish).ToList();
-                sortAfter.ForEach(book =>
-                {
-                    Console.WriteLine($"{book.Title} skriven av {book.Author}");
-                    Console.WriteLine($"Skriven år {book.Publish}");
-                    book.Genres.ForEach(genre => Console.WriteLine(genre));
-                    Console.WriteLine($"ISBN {book.ISBN}");
-
-                    if (book.Reviews.Count > 0)
-                    {
-                        Console.WriteLine($"Betyg: {book.Reviews.Average()}");
-                    }
-                    Console.WriteLine();
-                });
+                sortAfter = allBooks.OrderBy(book => book.Publish).ToList();
             }
-            else
-            {
-                var sortAfter = allBooks.OrderBy(book => book.Author).ToList();
-                sortAfter.ForEach(book =>
-                {
-                    Console.WriteLine($"{book.Title} skriven av {book.Author}");
-                    Console.WriteLine($"Skriven år {book.Publish}");
-                    book.Genres.ForEach(genre => Console.WriteLine(genre));
-                    Console.WriteLine($"ISBN {book.ISBN}");
 
-                    if (book.Reviews.Count > 0)
-                    {
-                        Console.WriteLine($"Betyg: {book.Reviews.Average()}");
-                    }
-                    Console.WriteLine();
-                });
+            sortAfter.ForEach(book =>
+            {
+                PrintBookInfo(book);
+
+                if (book.Reviews.Count > 0)
+                {
+                    Console.WriteLine($"Betyg: {book.Reviews.Average()}");
+                }
+                Console.WriteLine();
+            });
+        }
+
+        private static void PrintBookInfo(Book book)
+        {
+            Console.WriteLine($"{book.Title} skriven av {book.Author}");
+            Console.WriteLine($"Skriven år {book.Publish}");
+            book.Genres.ForEach(genre => Console.WriteLine(genre));
+            Console.WriteLine($"ISBN {book.ISBN}");
+
+            if (book.Reviews.Count > 0)
+            {
+                Console.WriteLine($"Betyg: {book.Reviews.Average()}");
             }
         }
 
@@ -461,5 +440,7 @@ namespace librarysystem
             //Vi delar input strängen till ord, kapitaliserar första bokstaven av varje ord, och sedan sätter tillbaka dom till en sträng.
             return string.Join(" ", inputString.Split(' ').Select(word => char.ToUpper(word[0]) + word.Substring(1)));
         }
+
+
     }
 }

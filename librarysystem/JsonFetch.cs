@@ -10,7 +10,7 @@ namespace librarysystem
 {
      class JsonFetch
     {
-        public static MyDatabase fetch()
+        public static MyDatabase Fetch()
         {
             string dataJSONfilPath = "LibraryData.json";
             if (File.Exists(dataJSONfilPath))

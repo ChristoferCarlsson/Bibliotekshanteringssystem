@@ -32,42 +32,14 @@ namespace Librarysystem
                         Console.WriteLine("Vad heter boken?");
                         title = Console.ReadLine();
                         //Om inputen är tom eller null
-                        if (string.IsNullOrEmpty(title))
-                        {
-                            Console.WriteLine("Var vänlig och fyll i alla fält!");
-                            break;
-                        }
+                        if (CheckIfEmpty(title)) break;
 
                         Console.WriteLine("Vad heter författaren?");
                         author = Console.ReadLine();
-                        if (string.IsNullOrEmpty(author))
-                        {
-                            Console.WriteLine("Var vänlig och fyll i alla fält!");
-                            break;
-                        }
+                        if (CheckIfEmpty(author)) break;
 
                         //Vi kollar så att åtminstånde ett genre har blivit vald, och att den är korrekt ifylld
                         List<string> genreList = AddGenres("Vad har den för genrar? Avsluta genom att skriva 'klar'");
-                        if (string.IsNullOrEmpty(genreList[0]))
-                        {
-                            Console.WriteLine("Var vänlig och välj åtminstånde en genre!");
-                            break;
-                        }
-
-                        notCorrectValue = false;
-                        genreList.ForEach(x =>
-                        {
-                            if (x == "")
-                            {
-                                notCorrectValue = true;
-                                return;
-                            }
-                        });
-                        if (notCorrectValue)
-                        {
-                            Console.WriteLine("Var vänlig och fyll i alla rader");
-                            break;
-                        }
 
                         Console.WriteLine("Vilket år var den publiserad?");
                         string inp = Console.ReadLine();
@@ -380,18 +352,40 @@ namespace Librarysystem
                 Console.WriteLine(text);
                 string genreInput = Console.ReadLine().ToLower();
 
-                if (genreInput == "klar")
+                if (genreInput == "" ){
+                    Console.WriteLine("Var vänlig och fyll i genre");
+                } else
                 {
-                    running = false;
-                    break;
-                }
-                else
-                {
-                    genreList.Add(genreInput);
+                    if (genreInput == "klar")
+                    {
+                        if (genreList.Count == 0)
+                        {
+                            Console.WriteLine("Var vänlig och välj åtminstånde en genre!");
+                        }
+                        else
+                        {
+                            running = false;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        genreList.Add(genreInput);
+                    }
                 }
             }
 
             return genreList.ToList();
+        }
+
+        private static bool CheckIfEmpty(string title)
+        {
+            if (string.IsNullOrEmpty(title))
+            {
+                Console.WriteLine("Var vänlig och fyll i alla fält!");
+                return true;
+            }
+            return false;
         }
 
     }
