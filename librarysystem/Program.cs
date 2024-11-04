@@ -352,9 +352,11 @@ namespace Librarysystem
                 Console.WriteLine(text);
                 string genreInput = Console.ReadLine().ToLower();
 
-                if (genreInput == "" ){
+                if (genreInput == "")
+                {
                     Console.WriteLine("Var vänlig och fyll i genre");
-                } else
+                }
+                else
                 {
                     if (genreInput == "klar")
                     {

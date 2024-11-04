@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace librarysystem
 {
-     class JsonFetch
+    class JsonFetch
     {
         public static MyDatabase Fetch()
         {
@@ -19,7 +19,8 @@ namespace librarysystem
                 MyDatabase myDatabase = JsonSerializer.Deserialize<MyDatabase>(allaDataSomJSONType)!;
 
                 return myDatabase;
-            } else
+            }
+            else
             {
                 Console.WriteLine("Oj, det verkar som att JSON filen inte finns! Var vänlig att dubbel kolla om den är kvar.");
                 Console.WriteLine("Var vänlig och avsluta programmet, och dubbel kolla om filen är kvar.");
