@@ -15,7 +15,6 @@ namespace librarysystem
             title = CleanUp(title);
             author = CleanUp(author);
 
-
             for (int i = 0; i < genres.Count; i++)
             {
                 genres[i] = CleanUp(genres[i]);
@@ -59,7 +58,7 @@ namespace librarysystem
             name = CleanUp(name);
             List<Author> allAuthors = myDatabase.allAuthorsFromDB;
 
-            //Vi kollar om boken redan finns.
+            //Vi kollar om författaren redan finns.
             var authors = allAuthors.Where(n => n.Name == name).ToList();
             if (authors.Count > 0)
             {
@@ -276,7 +275,7 @@ namespace librarysystem
 
                 //Vi kollar om boken redan finns.
                 var newBookName = allBooks.Where(n => n.Title == title).ToList();
-                if (titleBook.Count > 0)
+                if (newBookName.Count > 0)
                 {
                     Console.WriteLine("Den här boken finns redan!");
                     return;
