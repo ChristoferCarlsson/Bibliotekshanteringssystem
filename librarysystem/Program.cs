@@ -47,7 +47,7 @@ namespace Librarysystem
                         }
 
                         //Vi kollar så att åtminstånde ett genre har blivit vald, och att den är korrekt ifylld
-                        List<string> genreList = MultipleChoiceLoop("Vad har den för genrar? Avsluta genom att skriva 'klar'");
+                        List<string> genreList = AddGenres("Vad har den för genrar? Avsluta genom att skriva 'klar'");
                         if (string.IsNullOrEmpty(genreList[0]))
                         {
                             Console.WriteLine("Var vänlig och välj åtminstånde en genre!");
@@ -371,7 +371,7 @@ namespace Librarysystem
             }
         }
 
-        static List<string> MultipleChoiceLoop(string text)
+        static List<string> AddGenres(string text)
         {
             bool running = true;
             List<string> genreList = new List<string>();
